@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zip minifier</title>
+</head>
+<body>
+    <form action="archive_upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="project_archive" accept=".zip" required>
+        <input type="submit">
+    </form>
+
+    <p id="download-notice"></p>
+
+    <script>
+        let url = new URL(document.location.href),
+            get_params = url.searchParams;
+        
+        if (get_params.get('result')) {
+            let result = get_params.get('result'),
+                file = get_params.get('file'),
+                notice = document.querySelector('#download-notice');
+
+            if (result === 'success') {
+                notice.innerHTML = 'File ready for download: <a href="/uploads/' + file + '" download>' + file + '</a>';
+            } else {
+                notice.innerHTML = 'Error minify';
+            }
+        }
+    </script>
+</body>
+</html>

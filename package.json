@@ -1,0 +1,21 @@
+{
+	"name": "minify",
+	"version": "1.0.0",
+	"description": "Download minified css, js, html from zip",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "somonator",
+	"license": "ISC",
+	"dependencies": {
+		"clean-css": "^4.2.3",
+		"express": "^4.17.1",
+		"extract-zip": "^2.0.1",
+		"formidable": "^1.2.2",
+		"html-minifier": "^4.0.0",
+		"uglify-js": "^3.12.5",
+		"zip-folder": "^1.0.0"
+	}
+}
